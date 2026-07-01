@@ -22,12 +22,12 @@ impl Ticket {
         if !allowed_statuses.contains(&status.as_str()){
             panic!("Only `To-Do`, `In Progress`, and `Done` statuses are allowed");
         }
-        if title == String::new(){
+        if title.is_empty(){
             panic!("Title cannot be empty")
         }else if title.len() >= 50{
             panic!("Title cannot be longer than 50 bytes")
         };
-        if description == String::new(){
+        if description.is_empty(){
             panic!("Description cannot be empty")
         } else if description.len() >= 500{
             panic!("Description cannot be longer than 500 bytes")
